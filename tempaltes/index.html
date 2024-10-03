@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Cash Withdrawal</title>
+</head>
+<body>
+    <h1>Welcome to the ATM</h1>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <label for="amount">Enter the amount to withdraw:</label>
+        <input type="text" id="amount" name="amount" required>
+        <button type="submit">Withdraw</button>
+    </form>
+
+    {% if result %}
+        <h2>Transaction Successful!</h2>
+        <p>You withdrew {{ amount }}.</p>
+        <h3>You will receive:</h3>
+        <ul>
+            {% for denomination, count in result.items() %}
+                <li>{{ count }} x {{ denomination }} {{ 'note' if denomination >= 50 else 'coin' }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
