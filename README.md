@@ -3,8 +3,11 @@
 A simple text-based ATM simulation application written in Python.
 
 ## How to Run
-- Make sure Python is installed.
+- Make sure Python and flask is installed.
 - Run the application using `python main_app.py`.
+
+## Flask installation
+Run the command `pip install flask` to install pip
 
 ## Features
 - Withdraws cash using the least number of notes and coins.
