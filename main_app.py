@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Function to calculate withdrawal as before
+# Function to calculate withdrawal
 def calculate_withdrawal(amount):
     notes = [1000, 500, 200, 100, 50]
     coins = [20, 10, 5, 2, 1]
